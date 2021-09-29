@@ -11,4 +11,7 @@ func lesson2() {
 	} else {
 		fmt.Println("输入的数字等于10")
 	}
+
+	var addr_a *int = &num_a
+	fmt.Println(addr_a)
 }
