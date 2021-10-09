@@ -9,5 +9,6 @@ func main() {
 	// lesson6()
 	// lesson7()
 	// lesson8()
-	lesson9()
+	// lesson9()
+	lesson10()
 }
