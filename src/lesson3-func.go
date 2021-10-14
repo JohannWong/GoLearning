@@ -14,6 +14,11 @@ func lesson3() {
 	PrintValues()
 	numx2, numx3 = getX2AndX3_2(num)
 	PrintValues()
+
+	multi_n := 0
+	multi_n_addr := &multi_n
+	Multiply(10, 5, multi_n_addr)
+	fmt.Println("Multiply:", *multi_n_addr, multi_n)
 }
 
 func max(num_a int, num_b int) int {
@@ -38,4 +43,9 @@ func getX2AndX3_2(input int) (x2 int, x3 int) {
 	x2 = 2 * input
 	x3 = 3 * input
 	return
+}
+
+// this function changes reply:
+func Multiply(a, b int, reply *int) {
+	*reply = a * b
 }
