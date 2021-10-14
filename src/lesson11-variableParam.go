@@ -41,4 +41,7 @@ func sum_all_with_convert(num ...interface{}) (res float64) {
 func lesson11() {
 	fmt.Println(sum_all(1, 2, 3, 4, 5, 6, 7))
 	fmt.Println(sum_all_with_convert(1, 1.1, 2.1, 3.1, 4, true, "5.1"))
+
+	num_slice := []int{1, 2, 3, 4, 5, 6, 7}
+	fmt.Println(sum_all(num_slice...))
 }
