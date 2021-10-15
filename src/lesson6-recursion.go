@@ -2,11 +2,21 @@ package main
 
 import "fmt"
 
-func fibonacci(n int) int {
-	if n < 2 {
+const FIBO_LIM = 41
+
+var fib_list [FIBO_LIM]int
+
+func fibonacci(n int) (res int) {
+	if fib_list[n] != 0 {
+		res = fib_list[n]
+		return
+	} else if n < 2 {
 		return n
+	} else {
+		res = fibonacci(n-2) + fibonacci(n-1)
 	}
-	return fibonacci(n-2) + fibonacci(n-1)
+	fib_list[n] = res
+	return
 }
 
 func lesson6() {
