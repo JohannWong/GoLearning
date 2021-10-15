@@ -40,4 +40,12 @@ func lesson4() {
 	for i, num := range num_list_3 {
 		fmt.Println(i, num)
 	}
+
+	array_1 := new([5]int)
+	var array_2 [5]int
+
+	array_2 = *array_1
+	array_2[2] = 100
+	fmt.Println(array_1)
+	fmt.Println(array_2)
 }
