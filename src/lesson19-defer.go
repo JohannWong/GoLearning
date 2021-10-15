@@ -1,13 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func lesson19() {
+	log.SetFlags(log.Lshortfile)
 	doDBOperations()
 
 	to_trace_b()
 
 	fmt.Println(defer_func_test())
+
+	log.Print()
 }
 
 func connectToDB() {
@@ -25,6 +31,7 @@ func doDBOperations() {
 	fmt.Println("Doing some DB operations ...")
 	fmt.Println("Oops! some crash or network error ...")
 	fmt.Println("Returning from function here!")
+	log.Print()
 	return //terminate the program
 	// deferred function executed here just before actually returning, even if
 	// there is a return or abnormal termination before
@@ -37,6 +44,7 @@ func to_trace_a() {
 	trace("a")
 	defer untrace("a")
 	fmt.Println("in a")
+	log.Print()
 }
 
 func to_trace_b() {
@@ -44,6 +52,7 @@ func to_trace_b() {
 	defer untrace("b")
 	fmt.Println("in b")
 	to_trace_a()
+	log.Print()
 }
 
 func defer_func_test() (res int) {
